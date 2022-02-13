@@ -26,8 +26,19 @@ document.getElementById('key-pad').addEventListener('click', function (event) {
         const newNumber = previousNumber + number
         calcInput.value = newNumber
     }
-
-
-
-
 })
+
+//verfiy pin
+function verifyPin() {
+    let generatePin = document.getElementById('display-pin').value
+    let typeNumbers = document.getElementById('typed-numbers').value
+    let successMessage = document.getElementById('notify-success')
+    let failError = document.getElementById('notify-fail')
+    if (generatePin == typeNumbers) {
+        successMessage.style.display = 'block'
+        failError.style.display = 'none'
+    } else {
+        failError.style.display = 'block'
+        successMessage.style.display = 'none'
+    }
+}
